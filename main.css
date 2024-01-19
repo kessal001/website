@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.header img {
+    width: 50%;
+    margin-right: 20px; /* Aggiunto margine a destra per separare l'immagine dal testo */
+}
+
+.header-text-element {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Style for the menu */
+.menu {
+    display: flex;
+    justify-content: space-around; /* Evenly space the links */
+    background-color: #f1f1f1; /* Add a background color if needed */
+    padding: 10px; /* Add padding to the menu */
+}
+
+/* Style for the menu links */
+.menu a {
+    color: black;
+    text-decoration: none;
+    padding: 10px; /* Add padding to the links */
+}
+
+.menu a:visited {
+    color :inherit;
+}
