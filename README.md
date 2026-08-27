@@ -9,7 +9,7 @@ A minimal, editorial portfolio built for GitHub Pages.
 - `teaching.html` — teaching archive and course materials
 - `contact.html` — contact details and professional profiles
 - `main.css` — the complete visual system and responsive layout
-- `output/pdf/` — recruiter-ready PDF exports of the Italian and English CVs
+- `CV/` — Italian and English CVs in recruiter-ready PDF and editable DOCX formats, plus the current portrait
 
 The site intentionally uses semantic HTML and modern CSS instead of a JavaScript framework. There is no build step, dependency installation or generated output to maintain. MathJax is loaded only on the home page for the displayed formula.
 
