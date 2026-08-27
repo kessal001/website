@@ -315,6 +315,10 @@ h3 {
   gap: clamp(1.5rem, 5vw, 4rem);
 }
 
+.project-case--following {
+  border-top: 3px solid var(--ink);
+}
+
 .project-header__copy {
   max-width: 52rem;
 }
@@ -381,6 +385,16 @@ h3 {
   width: 100%;
   border: 1px solid var(--line);
   background: #151817;
+}
+
+.project-visual--diagram img {
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: #fff;
+}
+
+.project-visual--diagram a {
+  display: block;
 }
 
 .project-visual figcaption {
@@ -599,6 +613,36 @@ h3 {
 
 .page-intro__aside p:last-child {
   margin-bottom: 0;
+}
+
+.project-index {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.project-index li {
+  border-bottom: 1px solid var(--line);
+}
+
+.project-index a {
+  display: flex;
+  gap: 0.8rem;
+  padding-block: 0.65rem;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-index a:hover {
+  color: var(--accent);
+}
+
+.project-index span {
+  color: var(--ink-soft);
 }
 
 .download-list {

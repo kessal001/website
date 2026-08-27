@@ -43,6 +43,11 @@
       </div>
       <aside class="page-intro__aside">
         <p>Not a list of links, but a working record of how an idea becomes a useful system.</p>
+        <ol class="project-index">
+          <li><a href="#parquet-info"><span>01</span> parquet_info</a></li>
+          <li><a href="#epidemic-lab"><span>02</span> Epidemic Lab</a></li>
+          <li><a href="#myshelfie"><span>03</span> MyShelfie</a></li>
+        </ol>
       </aside>
     </section>
 
@@ -116,6 +121,132 @@
         <div class="text-links">
           <a href="https://github.com/kessal001/parquet_info#readme" target="_blank" rel="noopener noreferrer">Read the documentation</a>
           <a href="https://github.com/kessal001/parquet_info/tree/main/assets/screenshots" target="_blank" rel="noopener noreferrer">See more examples</a>
+        </div>
+      </footer>
+    </article>
+
+    <article id="epidemic-lab" class="project-case project-case--following" aria-labelledby="epidemic-title">
+      <header class="project-header">
+        <div class="section-index" aria-hidden="true">02</div>
+        <div class="project-header__copy">
+          <p class="eyebrow">Mathematical modelling · Educational software · 2020—2026</p>
+          <h2 id="epidemic-title">Epidemic Lab</h2>
+          <p class="project-deck">An interactive SIR epidemic simulator that turns a system of differential equations into a visual, explorable learning experience in the browser.</p>
+          <a class="project-link" href="https://github.com/kessal001/EpidemicProject" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <dl class="project-facts" aria-label="Epidemic Lab project details">
+        <div><dt>Role</dt><dd>Creator &amp; maintainer</dd></div>
+        <div><dt>Stack</dt><dd>Blazor · .NET 10 · C#</dd></div>
+        <div><dt>Numerics</dt><dd>Fourth-order Runge–Kutta</dd></div>
+        <div><dt>Execution</dt><dd>Local in the browser</dd></div>
+      </dl>
+
+      <figure class="project-visual">
+        <img src="https://raw.githubusercontent.com/kessal001/EpidemicProject/1daa701271850d318d2cd94b9d6d16949e66eb66/docs/images/simulatore.png" width="1905" height="848" loading="lazy" alt="Epidemic Lab interface with SIR parameters, reproduction number and epidemic curves">
+        <figcaption>The simulator connects adjustable parameters, R₀ and the evolution of susceptible, infected and removed populations.</figcaption>
+      </figure>
+
+      <div class="project-narrative">
+        <section aria-labelledby="epidemic-problem-title">
+          <p class="project-narrative__label">The problem</p>
+          <h3 id="epidemic-problem-title">Mathematical models are precise, but rarely tangible.</h3>
+          <p>The SIR model is compact on paper, yet its dynamics are easier to understand when parameters can be changed and their consequences observed. A useful teaching tool must preserve the mathematics while making transmission, removal, thresholds and the epidemic peak visible.</p>
+        </section>
+
+        <section aria-labelledby="epidemic-approach-title">
+          <p class="project-narrative__label">The approach</p>
+          <h3 id="epidemic-approach-title">Make every assumption observable.</h3>
+          <p>The application exposes population, initial conditions, transmission and removal rates as interactive controls. It integrates the equations numerically, redraws the SIR curves and calculates R₀ and the infection peak, pairing experimentation with a page that explains the model and its limits.</p>
+        </section>
+      </div>
+
+      <section class="project-capabilities" aria-labelledby="epidemic-capabilities-title">
+        <div class="section-heading">
+          <div class="section-index" aria-hidden="true">B</div>
+          <div>
+            <p class="eyebrow">From equations to interaction</p>
+            <h2 id="epidemic-capabilities-title">A model designed to be explored</h2>
+          </div>
+        </div>
+        <ol class="capability-list">
+          <li><span>01</span><div><h3>Simulate</h3><p>Integrate the SIR system with a fourth-order Runge–Kutta method and plot its three compartments.</p></div></li>
+          <li><span>02</span><div><h3>Experiment</h3><p>Change the population, initial infections, β, γ and duration, or begin from a preset scenario.</p></div></li>
+          <li><span>03</span><div><h3>Interpret</h3><p>Relate the reproduction number and infection peak to the parameters and the changing susceptible population.</p></div></li>
+          <li><span>04</span><div><h3>Learn safely</h3><p>Run entirely in the browser with no account, database or API, while clearly stating the scientific limits of SIR.</p></div></li>
+        </ol>
+      </section>
+
+      <footer class="project-footer">
+        <p>Originally developed as a 2020 school project and rebuilt in 2026: modernized from an obsolete prototype into an autonomous, responsive application for contemporary browsers.</p>
+        <div class="text-links">
+          <a href="https://github.com/kessal001/EpidemicProject#il-modello-sir" target="_blank" rel="noopener noreferrer">Read the model</a>
+          <a href="https://github.com/kessal001/EpidemicProject#limiti-scientifici" target="_blank" rel="noopener noreferrer">Scientific limits</a>
+        </div>
+      </footer>
+    </article>
+
+    <article id="myshelfie" class="project-case project-case--following" aria-labelledby="myshelfie-title">
+      <header class="project-header">
+        <div class="section-index" aria-hidden="true">03</div>
+        <div class="project-header__copy">
+          <p class="eyebrow">Software engineering · Distributed systems · 2023</p>
+          <h2 id="myshelfie-title">MyShelfie</h2>
+          <p class="project-deck">A distributed, multiplayer implementation of the My Shelfie board game, developed by a four-person team for the Software Engineering final project at Politecnico di Milano.</p>
+          <a class="project-link" href="https://github.com/kessal001/ing-sw-2023-saccani-spangaro-sanvito-pedersoli" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <dl class="project-facts" aria-label="MyShelfie project details">
+        <div><dt>Role</dt><dd>Software engineer · team of four</dd></div>
+        <div><dt>Stack</dt><dd>Java 19 · JavaFX · Maven</dd></div>
+        <div><dt>Architecture</dt><dd>Client–server · RMI &amp; sockets</dd></div>
+        <div><dt>Result</dt><dd>30L/30</dd></div>
+      </dl>
+
+      <figure class="project-visual project-visual--diagram">
+        <a href="https://raw.githubusercontent.com/kessal001/ing-sw-2023-saccani-spangaro-sanvito-pedersoli/25f09b2d4f315c958381676e5f3ce0e240153a80/Documents/Presentation%20Doc/UML/FlowUML/GameFlow_final.png" target="_blank" rel="noopener noreferrer" aria-label="Open the MyShelfie game-flow diagram at full resolution">
+          <img src="https://raw.githubusercontent.com/kessal001/ing-sw-2023-saccani-spangaro-sanvito-pedersoli/25f09b2d4f315c958381676e5f3ce0e240153a80/Documents/Presentation%20Doc/UML/FlowUML/GameFlow_final.png" width="3310" height="2210" loading="lazy" alt="UML diagram of the MyShelfie client game flow, input handling, event system and graphical and terminal interfaces">
+        </a>
+        <figcaption>Game-flow UML from the team’s engineering documentation. Open the image to inspect it at full resolution.</figcaption>
+      </figure>
+
+      <div class="project-narrative">
+        <section aria-labelledby="myshelfie-problem-title">
+          <p class="project-narrative__label">The challenge</p>
+          <h3 id="myshelfie-problem-title">A board game becomes a distributed system.</h3>
+          <p>Recreating the complete rules was only one part of the assignment. The application also had to coordinate concurrent matches, remote players, state changes and disconnections while supporting different network protocols and two distinct user interfaces.</p>
+        </section>
+
+        <section aria-labelledby="myshelfie-approach-title">
+          <p class="project-narrative__label">The approach</p>
+          <h3 id="myshelfie-approach-title">Separate domain, communication and presentation.</h3>
+          <p>The team structured the application around a client–server architecture with shared game logic, event-driven flows and interchangeable communication and interface layers. The same system can operate through sockets or RMI and through either a graphical JavaFX client or a terminal UI.</p>
+        </section>
+      </div>
+
+      <section class="project-capabilities" aria-labelledby="myshelfie-capabilities-title">
+        <div class="section-heading">
+          <div class="section-index" aria-hidden="true">C</div>
+          <div>
+            <p class="eyebrow">Engineering scope</p>
+            <h2 id="myshelfie-capabilities-title">Beyond the basic game requirements</h2>
+          </div>
+        </div>
+        <ol class="capability-list">
+          <li><span>01</span><div><h3>Multiple games</h3><p>Host concurrent matches and keep each game’s players, state and lifecycle isolated on the server.</p></div></li>
+          <li><span>02</span><div><h3>Resilient clients</h3><p>Handle client disconnections and reconnections while preserving the active match and player state.</p></div></li>
+          <li><span>03</span><div><h3>Two protocols, two UIs</h3><p>Support both Socket and RMI networking alongside a responsive JavaFX GUI and a terminal interface.</p></div></li>
+          <li><span>04</span><div><h3>Test &amp; document</h3><p>Use Maven, JUnit, JaCoCo coverage reports, UML and JavaDoc to support a large collaborative codebase.</p></div></li>
+        </ol>
+      </section>
+
+      <footer class="project-footer">
+        <p>The project was presented in June 2023, ahead of the official deadline, and received the highest grade with honours. The repository remains a record of both the application and the team’s engineering process.</p>
+        <div class="text-links">
+          <a href="https://github.com/kessal001/ing-sw-2023-saccani-spangaro-sanvito-pedersoli#what-we-have-implemented" target="_blank" rel="noopener noreferrer">Implemented features</a>
+          <a href="https://github.com/kessal001/ing-sw-2023-saccani-spangaro-sanvito-pedersoli/tree/main/Documents" target="_blank" rel="noopener noreferrer">Engineering documents</a>
         </div>
       </footer>
     </article>
