@@ -251,7 +251,8 @@ h3 {
 .page-intro,
 .cv-section,
 .teaching-section,
-.contact-section {
+.contact-section,
+.project-case {
   border-top: 1px solid var(--line);
 }
 
@@ -303,8 +304,196 @@ h3 {
 .selected,
 .cv-section,
 .teaching-section,
-.contact-section {
+.contact-section,
+.project-case {
   padding-block: clamp(4rem, 8vw, 6.5rem);
+}
+
+.project-header {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.project-header__copy {
+  max-width: 52rem;
+}
+
+.project-header h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  letter-spacing: -0.055em;
+}
+
+.project-deck {
+  max-width: 46rem;
+  margin-bottom: 1.75rem;
+  font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+  line-height: 1.48;
+}
+
+.project-link {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: clamp(3rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-facts div {
+  padding: 1.15rem clamp(0.8rem, 2vw, 1.5rem) 1.25rem 0;
+}
+
+.project-facts div + div {
+  padding-left: clamp(0.8rem, 2vw, 1.5rem);
+  border-left: 1px solid var(--line);
+}
+
+.project-facts dt,
+.project-narrative__label,
+.capability-list > li > span {
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.project-facts dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+}
+
+.project-visual {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.project-visual img {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #151817;
+}
+
+.project-visual figcaption {
+  margin-top: 0.7rem;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.045em;
+}
+
+.project-narrative {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 8vw, 8rem);
+  margin-left: calc(3rem + clamp(1.5rem, 5vw, 4rem));
+}
+
+.project-narrative section {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--ink);
+}
+
+.project-narrative h3 {
+  margin-top: 1.2rem;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+}
+
+.project-narrative p:last-child {
+  color: var(--ink-soft);
+}
+
+.project-capabilities {
+  margin-top: clamp(4rem, 9vw, 8rem);
+  padding-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.capability-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ink);
+}
+
+.capability-list li {
+  display: grid;
+  grid-template-columns: 3rem minmax(10rem, 0.35fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding-block: 1.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.capability-list li div {
+  display: contents;
+}
+
+.capability-list h3,
+.capability-list p {
+  margin: 0;
+}
+
+.capability-list p {
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+.project-command {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  margin-top: clamp(4rem, 9vw, 8rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.project-command .eyebrow {
+  color: #adc8bf;
+}
+
+.project-command h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.project-command p:last-child {
+  margin-bottom: 0;
+  color: #c8c9c3;
+}
+
+.project-command pre {
+  max-width: 100%;
+  margin: 0;
+  padding: 1.4rem;
+  overflow-x: auto;
+  border: 1px solid #555a57;
+  background: #101211;
+  color: #e7eee9;
+  font: 0.82rem/1.75 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+.project-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  padding-top: 2rem;
+}
+
+.project-footer > p {
+  max-width: var(--measure);
+  margin-bottom: 0;
+  color: var(--ink-soft);
 }
 
 .section-heading {
@@ -639,6 +828,10 @@ h3 {
     padding-block: 1.25rem;
   }
 
+  .site-header nav {
+    width: 100%;
+  }
+
   .site-nav {
     width: 100%;
     justify-content: space-between;
@@ -687,6 +880,28 @@ h3 {
   .cv-grid {
     grid-template-columns: 1fr;
   }
+
+  .project-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-facts div:nth-child(3) {
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .project-facts div:nth-child(4) {
+    border-top: 1px solid var(--line);
+  }
+
+  .project-narrative {
+    margin-left: 0;
+  }
+
+  .project-command {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 580px) {
@@ -706,7 +921,8 @@ h3 {
   .site-nav {
     flex-wrap: wrap;
     justify-content: flex-start;
-    column-gap: 1.25rem;
+    column-gap: 1rem;
+    font-size: 0.68rem;
   }
 
   h1 {
@@ -716,7 +932,8 @@ h3 {
   .abstract,
   .page-intro,
   .contact-section,
-  .section-heading {
+  .section-heading,
+  .project-header {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
@@ -750,6 +967,42 @@ h3 {
   .site-footer {
     flex-direction: column;
     gap: 0.4rem;
+  }
+
+  .project-facts,
+  .project-narrative,
+  .project-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .project-facts div,
+  .project-facts div + div,
+  .project-facts div:nth-child(3) {
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .project-facts div:first-child {
+    border-top: 0;
+  }
+
+  .capability-list li {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.5rem 1rem;
+  }
+
+  .capability-list li div {
+    display: block;
+  }
+
+  .capability-list p {
+    margin-top: 0.4rem;
+  }
+
+  .project-command {
+    margin-inline: -1rem;
+    padding: 2rem 1rem;
   }
 }
 

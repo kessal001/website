@@ -5,6 +5,7 @@ A minimal, editorial portfolio built for GitHub Pages.
 ## Structure
 
 - `index.html` — profile and current practice
+- `projects.html` — selected projects presented as descriptive case studies
 - `cv.html` — experience, education and CV downloads in PDF and DOCX
 - `teaching.html` — teaching archive and course materials
 - `contact.html` — contact details and professional profiles
