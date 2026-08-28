@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kessal001.github.io/website/sitemap.xml

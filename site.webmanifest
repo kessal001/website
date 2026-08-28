@@ -1,0 +1,12 @@
+{
+  "name": "Luca Pedersoli — Portfolio",
+  "short_name": "Luca Pedersoli",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#f3f0e8",
+  "theme_color": "#f3f0e8",
+  "icons": [
+    {"src": "assets/images/favicon-64.png", "sizes": "64x64", "type": "image/png"},
+    {"src": "assets/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}
+  ]
+}

@@ -11,15 +11,26 @@
   <meta property="og:url" content="https://kessal001.github.io/website/">
   <meta property="og:image" content="https://kessal001.github.io/website/CV/Luca_Pedersoli_LinkedIn.png">
   <link rel="canonical" href="https://kessal001.github.io/website/">
-  <link rel="stylesheet" href="main.css?v=20260827">
+  <link rel="icon" href="assets/images/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="main.css?v=20260828">
   <title>Luca Pedersoli — Data, software &amp; teaching</title>
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
-      options: { enableMenu: false }
-    };
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luca Pedersoli",
+      "url": "https://kessal001.github.io/website/",
+      "image": "https://kessal001.github.io/website/CV/Luca_Pedersoli_LinkedIn.png",
+      "jobTitle": "Business Intelligence, Data Analytics & Software Development Specialist",
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Politecnico di Milano"},
+      "sameAs": [
+        "https://github.com/kessal001",
+        "https://www.linkedin.com/in/luca-pedersoli"
+      ]
+    }
   </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -55,7 +66,7 @@
       </div>
 
       <figure class="portrait">
-        <img src="CV/Luca_Pedersoli_LinkedIn.png" width="1254" height="1254" alt="Portrait of Luca Pedersoli" fetchpriority="high">
+        <img src="assets/images/portrait-800.webp" srcset="assets/images/portrait-400.webp 400w, assets/images/portrait-800.webp 800w, assets/images/portrait-1200.webp 1200w" sizes="(max-width: 820px) min(28rem, calc(100vw - 2rem)), 31vw" width="800" height="800" alt="Portrait of Luca Pedersoli" fetchpriority="high">
         <figcaption>Portrait, 2026</figcaption>
       </figure>
     </section>
@@ -70,7 +81,9 @@
       </div>
       <aside class="formula" aria-label="Basel problem identity">
         <span class="formula__label">A recurring reference</span>
-        <div>\[\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}\]</div>
+        <math display="block" aria-label="The sum from n equals one to infinity of one over n squared equals pi squared over six">
+          <mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></munderover><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>=</mo><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>6</mn></mfrac></mrow>
+        </math>
         <p>Simple terms, unexpected structure.</p>
       </aside>
     </section>
@@ -103,9 +116,56 @@
       </div>
     </section>
 
-    <section class="selected" aria-labelledby="selected-title">
+    <section class="featured-work" aria-labelledby="featured-title">
       <div class="section-heading">
         <div class="section-index" aria-hidden="true">03</div>
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2 id="featured-title">Three systems, three kinds of problem</h2>
+        </div>
+      </div>
+
+      <div class="project-grid project-grid--home">
+        <article class="project-card">
+          <a class="project-card__visual" href="project-parquet-info.html" aria-label="Read the parquet_info case study">
+            <img src="assets/projects/parquet-info-overview.svg" width="1200" height="700" loading="lazy" alt="parquet_info terminal overview">
+          </a>
+          <div class="project-card__body">
+            <p class="eyebrow">Data tooling · Python</p>
+            <h3><a href="project-parquet-info.html">parquet_info</a></h3>
+            <p>A focused CLI that turns an unfamiliar Parquet file into an inspectable, searchable dataset.</p>
+            <a class="project-card__link" href="project-parquet-info.html">Read case study <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-card__visual" href="project-epidemic-lab.html" aria-label="Read the Epidemic Lab case study">
+            <img src="assets/projects/epidemic-lab.png" width="1905" height="848" loading="lazy" alt="Epidemic Lab SIR simulator interface">
+          </a>
+          <div class="project-card__body">
+            <p class="eyebrow">Modelling · Blazor</p>
+            <h3><a href="project-epidemic-lab.html">Epidemic Lab</a></h3>
+            <p>An interactive SIR simulator that makes differential equations tangible in the browser.</p>
+            <a class="project-card__link" href="project-epidemic-lab.html">Read case study <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-card__visual" href="project-myshelfie.html" aria-label="Read the MyShelfie case study">
+            <img src="assets/projects/myshelfie-game-flow.png" width="3310" height="2210" loading="lazy" alt="MyShelfie game-flow UML diagram">
+          </a>
+          <div class="project-card__body">
+            <p class="eyebrow">Distributed systems · Java</p>
+            <h3><a href="project-myshelfie.html">MyShelfie</a></h3>
+            <p>A multiplayer board game engineered by a four-person team across networks, interfaces and recovery.</p>
+            <a class="project-card__link" href="project-myshelfie.html">Read case study <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+      <p class="section-outro section-outro--flush"><a href="projects.html">View the complete project index</a></p>
+    </section>
+
+    <section class="selected" aria-labelledby="selected-title">
+      <div class="section-heading">
+        <div class="section-index" aria-hidden="true">04</div>
         <div>
           <p class="eyebrow">Selected trajectory</p>
           <h2 id="selected-title">Work, study and teaching</h2>

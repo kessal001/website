@@ -247,6 +247,7 @@ h3 {
 
 .abstract,
 .overview,
+.featured-work,
 .selected,
 .page-intro,
 .cv-section,
@@ -284,9 +285,9 @@ h3 {
   background: color-mix(in srgb, var(--paper-deep) 52%, transparent);
 }
 
-.formula mjx-container {
-  margin-block: 1.3rem !important;
-  font-size: 118% !important;
+.formula math {
+  margin-block: 1.3rem;
+  font-size: 1.35rem;
 }
 
 .formula p {
@@ -301,6 +302,7 @@ h3 {
 }
 
 .overview,
+.featured-work,
 .selected,
 .cv-section,
 .teaching-section,
@@ -585,6 +587,124 @@ h3 {
   font-family: var(--sans);
   font-size: 0.84rem;
   font-weight: 600;
+}
+
+.section-outro--flush {
+  margin-left: 0;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.project-card + .project-card {
+  border-left: 1px solid var(--line);
+}
+
+.project-card__visual {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #151817;
+}
+
+.project-card__visual img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  filter: saturate(0.7) contrast(1.02);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.project-card:nth-child(3) .project-card__visual img {
+  object-fit: contain;
+  background: #fff;
+}
+
+.project-card__visual:hover img {
+  transform: scale(1.015);
+  filter: saturate(0.9) contrast(1.02);
+}
+
+.project-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem clamp(1rem, 2.4vw, 2rem) 1.75rem;
+}
+
+.project-card__body h2,
+.project-card__body h3 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+}
+
+.project-card__body h2 a,
+.project-card__body h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.project-card__body > p:not(.eyebrow) {
+  margin-bottom: 1.4rem;
+  color: var(--ink-soft);
+}
+
+.project-card__link {
+  margin-top: auto;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.project-card__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin: 0 0 1.4rem;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.035em;
+}
+
+.project-card__facts li + li::before {
+  content: "·";
+  margin-right: 1rem;
+}
+
+.project-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .page-intro {
@@ -906,6 +1026,15 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card + .project-card {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
   .discipline-grid article {
     min-height: auto;
     padding: 1.5rem 0 2rem;
@@ -963,10 +1092,25 @@ h3 {
   }
 
   .site-nav {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    column-gap: 1rem;
-    font-size: 0.68rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    font-size: 0.75rem;
+  }
+
+  .site-nav li {
+    grid-column: span 2;
+    border-top: 1px solid var(--line);
+  }
+
+  .site-nav li:nth-child(4),
+  .site-nav li:nth-child(5) {
+    grid-column: span 3;
+  }
+
+  .site-nav a {
+    min-height: 2.75rem;
+    padding: 0.8rem 0.35rem 0.65rem 0;
   }
 
   h1 {
