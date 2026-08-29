@@ -331,6 +331,11 @@ h3 {
   letter-spacing: -0.055em;
 }
 
+.project-header--long h1 {
+  font-size: clamp(3rem, 5vw, 6rem);
+  letter-spacing: -0.05em;
+}
+
 .project-deck {
   max-width: 46rem;
   margin-bottom: 1.75rem;
@@ -595,7 +600,7 @@ h3 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--line);
 }
@@ -608,6 +613,14 @@ h3 {
 
 .project-card + .project-card {
   border-left: 1px solid var(--line);
+}
+
+.project-card:nth-child(odd) {
+  border-left: 0;
+}
+
+.project-card:nth-child(n + 3) {
+  border-top: 1px solid var(--line);
 }
 
 .project-card__visual {
@@ -625,8 +638,13 @@ h3 {
   transition: transform 180ms ease, filter 180ms ease;
 }
 
-.project-card:nth-child(3) .project-card__visual img {
+.project-card--diagram .project-card__visual img {
   object-fit: contain;
+  background: #fff;
+}
+
+.project-card--document .project-card__visual img {
+  object-position: center 13%;
   background: #fff;
 }
 
@@ -705,6 +723,12 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.project-visual--document img {
+  max-width: 50rem;
+  margin-inline: auto;
+  background: #fff;
 }
 
 .page-intro {
@@ -1033,6 +1057,10 @@ h3 {
   .project-card + .project-card {
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .project-card:nth-child(2) {
+    border-top: 1px solid var(--line);
   }
 
   .discipline-grid article {
