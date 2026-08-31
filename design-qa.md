@@ -1,53 +1,49 @@
-# Design QA — Bending Spoons project addition
+# Design QA — Portfolio Optimizer project addition
 
 **Comparison target**
 
-- Source visual truth: the verified three-project portfolio captures in `C:\Users\LucaPedersoli\AppData\Local\Temp\codex-portfolio-build-qa-2026-08-28\`, specifically `home-full.png`, `projects-full.png` and `projects-desktop-exact.png`.
-- Rendered implementation: Chrome captures in `C:\Users\LucaPedersoli\AppData\Local\Temp\codex-portfolio-bending-qa-2026-08-29\`, including `home-full.png`, `projects-full.png`, `projects-desktop.png`, `projects-mobile.png`, `bending-detail-desktop-v2.png` and `bending-detail-mobile-v2.png`.
-- Side-by-side evidence: `compare-home-full.png`, `compare-projects-full.png` and `compare-projects-focused.png` in the implementation screenshot directory.
-- Desktop viewport: 1905 × 904 CSS px at device scale factor 1; viewport screenshots are 1905 × 904 pixels. Browser content width is 1890 px when a vertical scrollbar is present.
-- Mobile viewport: 390 × 844 CSS px at device scale factor 1; browser content width is 375 px with the vertical scrollbar.
-- State: public, unauthenticated, light theme. Home and projects were compared as full pages and at page top; the new detail page was checked at page top.
+- Source visual truth: the verified four-project portfolio captures in `C:\Users\LucaPedersoli\AppData\Local\Temp\codex-portfolio-bending-qa-2026-08-29\`, especially `projects-full.png` and `projects-desktop.png`.
+- Rendered implementation: Chrome captures in `C:\Users\LucaPedersoli\AppData\Local\Temp\codex-portfolio-optimizer-qa-2026-08-31\`.
+- Desktop viewport: 1905 × 904 CSS px at device scale factor 1; browser content width is 1890 px when the vertical scrollbar is present.
+- Mobile viewport: 390 × 844 CSS px; browser content width is 375 px with the vertical scrollbar.
+- State: local, unauthenticated, light theme. The project index and new case study were inspected at desktop and mobile widths.
 
 **Findings**
 
 - No actionable P0, P1 or P2 findings remain.
-- Typography: the established Palatino/Georgia display system and sans-serif metadata remain unchanged. The long Bending Spoons title now uses a scoped responsive scale and holds the intended two-line hierarchy on desktop and mobile.
-- Spacing and layout: the project area changes intentionally from a three-column row to a balanced two-by-two grid. Rules, gutters, card alignment and section rhythm remain consistent with the academic editorial source.
-- Colors and tokens: the paper, ink, line and green accent tokens are unchanged. The navy, blue, green and red in the research preview belong to the real report asset rather than invented site decoration.
-- Image quality: both project previews are pinned local copies from repository commit `e4fd44f879b3fe0c3f55b0b13c936879c0241ed8`. The document crop keeps the thesis title, conclusion and valuation chart legible at card scale; the full document remains available on the case-study page.
-- Copy and content: the case study distinguishes a dated 28 August 2026 conclusion from current investment advice. It documents role, deliverables, methodology, assumptions, quality checks and output without claiming live market relevance.
-- Responsiveness: Chrome reported no horizontal overflow on home, project index or the new case study at desktop and mobile sizes. Four cards collapse into one column below the existing breakpoint.
-- Accessibility and interactions: the new image has descriptive alternative text; the page keeps semantic headings, project navigation and external-link safety attributes. The project card was used to navigate from the index to the new detail route successfully.
-- Browser evidence: Chrome rendered the home, project index and Bending Spoons detail page. All four project images loaded with non-zero natural dimensions. Browser warning/error logs were empty after desktop and mobile navigation.
+- Typography: the established Palatino/Georgia display system and sans-serif metadata remain unchanged. The new title has stable wrapping at both tested widths.
+- Spacing and layout: the original two-column project rhythm remains intact. The fifth item becomes a single full-width editorial feature on desktop and returns to the established vertical card pattern on mobile.
+- Colors and tokens: the paper, ink, line and green accent tokens are unchanged. Chart colors come from a real project output rather than decorative artwork.
+- Image quality: the preview is a local copy of the efficient-frontier and walk-forward chart embedded in the repository guide. Its labels and overall analytical structure remain visible at card and case-study scale.
+- Copy and content: the case study explains the problem, configurable acquisition layer, risk diagnostics, constrained construction and out-of-sample validation. It identifies the work as an analytical tool rather than financial advice.
+- Responsiveness: Chrome reported no horizontal overflow on the project index or new case study at desktop and mobile widths. The wide card collapses into one column at the existing breakpoint.
+- Accessibility and interactions: the image has descriptive alternative text; semantic headings, local navigation and external-link safety attributes are present. Navigation from the project card to the detail route succeeded.
+- Browser evidence: all five project images loaded with non-zero natural dimensions and browser warning/error logs were empty.
 
-**Full-view comparison evidence**
+**Visual evidence**
 
-- `compare-home-full.png` shows that the additional row increases only the Selected Work section while preserving the rest of the home hierarchy.
-- `compare-projects-full.png` shows the intentional transition from a three-card row to a balanced four-card grid without changing the surrounding page language.
-
-**Focused region comparison evidence**
-
-- `compare-projects-focused.png` places the old and new project intros together at the same viewport. Typography, shell width, rules and header spacing remain aligned.
-- `bending-detail-desktop-v2.png` and `bending-detail-mobile-v2.png` were inspected at native viewport size for title wrapping, fact-grid alignment and above-the-fold density.
+- `projects-desktop.png` records the unchanged project-index introduction and top-grid rhythm.
+- `projects-wide-card-desktop-v2.png` records the corrected full-width fifth card with the complete chart visible.
+- `projects-mobile.png` records the single-column project index at 390 px.
+- `optimizer-detail-desktop.png` and `optimizer-detail-mobile.png` record the new case-study header and opening content at both target widths.
 
 **Comparison history**
 
-1. First implementation — P2 title scale on the new detail page.
-   Evidence: `bending-detail-desktop.png` and `bending-detail-mobile.png` showed the global display scale forcing the long name into four dominant lines.
-   Fix: added `.project-header--long` with `font-size: clamp(3rem, 5vw, 6rem)` and applied it only to this case study.
-   Post-fix evidence: `bending-detail-desktop-v2.png` and `bending-detail-mobile-v2.png` show a stable two-line title with the project deck and facts returning above the fold.
+1. First implementation — P2 chart crop on the wide desktop card.
+   Evidence: `projects-wide-card-desktop.png` cut off part of the chart timeline because the wide-card image inherited the global cover treatment.
+   Fix: scoped the wide-card image to `object-fit: contain`, preserved its white analytical canvas and added a mobile minimum-height reset.
+   Post-fix evidence: `projects-wide-card-desktop-v2.png` shows the full chart without distortion or layout overflow.
 
 **Implementation Checklist**
 
-- [x] Preserve the existing editorial design system.
-- [x] Add a balanced four-project layout on home and project index.
-- [x] Verify the new case study at desktop and mobile widths.
-- [x] Test project-card navigation, asset loading and browser logs.
+- [x] Preserve the academic editorial design system.
+- [x] Add a fifth descriptive project and dedicated case study.
+- [x] Use a real project output instead of a generic illustration.
+- [x] Verify desktop and mobile layout, navigation, asset loading and browser logs.
 - [x] Resolve all P0/P1/P2 findings.
 
 **Follow-up Polish**
 
-- No P3 visual issue is material enough to hold for a future pass.
+- No material P3 visual issue remains for a future pass.
 
 final result: passed

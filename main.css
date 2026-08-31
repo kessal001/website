@@ -648,6 +648,24 @@ h3 {
   background: #fff;
 }
 
+.project-card--wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+}
+
+.project-card--wide .project-card__visual {
+  border-right: 1px solid var(--line);
+  border-bottom: 0;
+}
+
+.project-card--wide .project-card__visual img {
+  height: 100%;
+  min-height: 21rem;
+  object-fit: contain;
+  background: #fff;
+}
+
 .project-card__visual:hover img {
   transform: scale(1.015);
   filter: saturate(0.9) contrast(1.02);
@@ -1061,6 +1079,20 @@ h3 {
 
   .project-card:nth-child(2) {
     border-top: 1px solid var(--line);
+  }
+
+  .project-card--wide {
+    grid-column: auto;
+    display: flex;
+  }
+
+  .project-card--wide .project-card__visual {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-card--wide .project-card__visual img {
+    min-height: 0;
   }
 
   .discipline-grid article {

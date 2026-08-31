@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio Optimizer case study: a configurable Python application for market data, risk analytics, constrained optimization and walk-forward backtesting.">
+  <meta name="theme-color" content="#f3f0e8">
+  <meta property="og:title" content="Portfolio Optimizer — Luca Pedersoli">
+  <meta property="og:description" content="From configurable market data to risk analysis, efficient portfolios and out-of-sample validation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://kessal001.github.io/website/project-portfolio-optimizer.html">
+  <meta property="og:image" content="https://kessal001.github.io/website/assets/projects/portfolio-optimizer-analysis.png">
+  <link rel="canonical" href="https://kessal001.github.io/website/project-portfolio-optimizer.html">
+  <link rel="icon" href="assets/images/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="main.css?v=20260831">
+  <title>Portfolio Optimizer — Luca Pedersoli</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      "name": "Portfolio Optimizer + Risk Analysis",
+      "description": "A configurable stock and ETF portfolio optimizer with risk analytics, efficient frontier and walk-forward backtesting.",
+      "codeRepository": "https://github.com/kessal001/portfolio-optimizer-risk-analysis",
+      "programmingLanguage": "Python",
+      "author": {"@type": "Person", "name": "Luca Pedersoli"}
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header site-shell">
+    <a class="site-mark" href="index.html" aria-label="Luca Pedersoli, home"><span class="site-mark__name">Luca Pedersoli</span><span class="site-mark__place">Milano</span></a>
+    <nav aria-label="Primary navigation"><ul class="site-nav"><li><a href="index.html">About</a></li><li><a href="projects.html" aria-current="page">Projects</a></li><li><a href="cv.html">Curriculum</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  </header>
+
+  <main id="content" class="site-shell">
+    <article class="project-case">
+      <a class="back-link" href="projects.html">← All projects</a>
+      <header class="project-header project-header--long">
+        <div class="section-index" aria-hidden="true">05</div>
+        <div class="project-header__copy">
+          <p class="eyebrow">Portfolio analytics · Risk engineering · 2026</p>
+          <h1>Portfolio Optimizer<br>&amp; Risk Analysis</h1>
+          <p class="project-deck">A configurable application that moves from raw stock and ETF prices to auditable risk metrics, constrained portfolio weights and walk-forward evidence.</p>
+          <a class="project-link" href="https://github.com/kessal001/portfolio-optimizer-risk-analysis" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <dl class="project-facts" aria-label="Project details">
+        <div><dt>Role</dt><dd>Creator &amp; developer</dd></div>
+        <div><dt>Stack</dt><dd>Python · Tkinter · CLI</dd></div>
+        <div><dt>Methods</dt><dd>Optimization · Risk · Backtest</dd></div>
+        <div><dt>Assets</dt><dd>Stocks &amp; ETFs</dd></div>
+      </dl>
+
+      <figure class="project-visual">
+        <a href="assets/projects/portfolio-optimizer-analysis.png" target="_blank" rel="noopener noreferrer" aria-label="Open the portfolio analysis charts at full resolution">
+          <img src="assets/projects/portfolio-optimizer-analysis.png" width="2080" height="800" alt="Efficient frontier and walk-forward backtest comparing a maximum-Sharpe portfolio with its benchmark">
+        </a>
+        <figcaption>Illustrative output embedded in the project guide: an efficient frontier beside a cost-aware walk-forward comparison.</figcaption>
+      </figure>
+
+      <div class="project-narrative">
+        <section>
+          <p class="project-narrative__label">The problem</p>
+          <h2>Optimization is only useful when the surrounding pipeline is trustworthy.</h2>
+          <p>A portfolio weight vector is the final step of a longer analytical chain. Prices need to be sourced, normalized and aligned; risk estimates need controls; constraints must be explicit; and the strategy must be tested using only information available before each rebalance.</p>
+        </section>
+        <section>
+          <p class="project-narrative__label">The approach</p>
+          <h2>Keep data, analytics and decisions replaceable.</h2>
+          <p>The application separates provider adapters from the analytical engine. Users choose the stock and ETF universe, benchmark, data source and optimization settings, then receive a reproducible package containing cleaned data, diagnostics, portfolio weights, charts, backtest history and a manifest.</p>
+        </section>
+      </div>
+
+      <section class="project-capabilities" aria-labelledby="optimizer-process-title">
+        <div class="section-heading"><div class="section-index" aria-hidden="true">E</div><div><p class="eyebrow">Analytical pipeline</p><h2 id="optimizer-process-title">Four stages from prices to evidence</h2></div></div>
+        <ol class="capability-list">
+          <li><span>01</span><div><h3>Acquire</h3><p>Use Yahoo Finance, Twelve Data, Alpha Vantage or a custom REST/CSV source behind the same provider interface and incremental cache.</p></div></li>
+          <li><span>02</span><div><h3>Diagnose</h3><p>Calculate CAGR, volatility, Sharpe, Sortino, Calmar, beta, VaR, CVaR and maximum drawdown on aligned return histories.</p></div></li>
+          <li><span>03</span><div><h3>Construct</h3><p>Compare equal weight, minimum variance, maximum Sharpe and risk parity with shrinkage covariance, long-only constraints and maximum weights.</p></div></li>
+          <li><span>04</span><div><h3>Validate</h3><p>Run a walk-forward backtest with configurable lookback, rebalancing and turnover costs, keeping each estimate strictly prior to its decision date.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="project-command" aria-labelledby="optimizer-interface-title">
+        <div><p class="eyebrow">Two interfaces</p><h2 id="optimizer-interface-title">Guided when exploring, repeatable when automating.</h2><p>The desktop interface exposes the complete workflow without hard-coded tickers. The CLI uses the same pipeline for scheduled or reproducible runs.</p></div>
+        <pre><code>python cli.py \
+  --symbols SPY,QQQ,IWM,AGG \
+  --benchmark SPY \
+  --provider yahoo</code></pre>
+      </section>
+
+      <footer class="project-footer">
+        <p>Each run produces an auditable package of prices, returns, metrics, weights, frontier, walk-forward history, charts, CSV tables and an HTML report. Results remain sensitive to data quality and estimation choices; the project is analytical software, not financial advice.</p>
+        <div class="text-links"><a href="https://github.com/kessal001/portfolio-optimizer-risk-analysis#readme" target="_blank" rel="noopener noreferrer">Documentation</a><a href="https://github.com/kessal001/portfolio-optimizer-risk-analysis/blob/main/Portfolio_Optimizer_Guida_Completa.docx" target="_blank" rel="noopener noreferrer">Complete guide</a></div>
+      </footer>
+    </article>
+    <nav class="project-pagination" aria-label="Project navigation"><a href="project-bending-spoons-equity-research.html">← Bending Spoons</a><a href="projects.html">Project index →</a></nav>
+  </main>
+  <footer class="site-footer site-shell"><p>© Luca Pedersoli, 2026</p><p><a href="contact.html">Discuss a project</a></p></footer>
+</body>
+</html>
