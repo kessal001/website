@@ -20,6 +20,9 @@
     <image:image>
       <image:loc>https://kessal001.github.io/website/assets/projects/portfolio-optimizer-analysis.png</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://kessal001.github.io/website/assets/projects/frog-and-toad-social-card.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://kessal001.github.io/website/contact.html</loc>
@@ -37,6 +40,12 @@
     <loc>https://kessal001.github.io/website/project-epidemic-lab.html</loc>
     <image:image>
       <image:loc>https://kessal001.github.io/website/assets/projects/epidemic-lab.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kessal001.github.io/website/project-frog-and-toad.html</loc>
+    <image:image>
+      <image:loc>https://kessal001.github.io/website/assets/projects/frog-and-toad-social-card.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -73,6 +82,9 @@
     </image:image>
     <image:image>
       <image:loc>https://kessal001.github.io/website/assets/projects/portfolio-optimizer-analysis.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://kessal001.github.io/website/assets/projects/frog-and-toad-social-card.jpg</image:loc>
     </image:image>
   </url>
   <url>
