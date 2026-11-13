@@ -13,12 +13,14 @@
   --inverse-soft: #2e3614;
   --inverse-accent: #0b0c0f;
   --media-bg: #111317;
-  --c-lime: #c8ff4d;
-  --c-coral: #ff6a45;
-  --c-blue: #8aa2ff;
-  --c-lilac: #c9a8ff;
-  --c-amber: #ffc94d;
-  --c-mint: #5ef2b8;
+  --accent-ink: #0b0c0f;
+  --card-ink: #0b0c0f;
+  --c1: #c8ff4d;
+  --c2: #ff6a45;
+  --c3: #8aa2ff;
+  --c4: #5ef2b8;
+  --c5: #c9a8ff;
+  --c6: #ffc94d;
   --serif: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --display: "Inter Tight", Inter, ui-sans-serif, sans-serif;
@@ -1221,7 +1223,7 @@ h3 {
 
 ::selection {
   background: var(--accent);
-  color: var(--paper);
+  color: var(--accent-ink);
 }
 
 body {
@@ -1321,7 +1323,7 @@ h3 em {
 .button--primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: var(--paper);
+  color: var(--accent-ink);
 }
 
 .button--primary:hover {

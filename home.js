@@ -178,7 +178,13 @@
     const hero = document.querySelector(".hx");
     if (!canvas || !hero || !canvas.getContext) return;
     const ctx = canvas.getContext("2d");
-    const colors = ["rgba(242,240,234,0.5)", "rgba(242,240,234,0.28)", "rgba(200,255,77,0.9)", "rgba(138,162,255,0.85)"];
+    let colors = [];
+    const readColors = () => {
+      const css = getComputedStyle(root);
+      const v = (name) => css.getPropertyValue(name).trim();
+      colors = [[v("--ink"), 0.5], [v("--ink"), 0.28], [v("--accent"), 0.9], [v("--c3"), 0.85]];
+      parts.forEach((p) => { p.col = pick(); });
+    };
     const mouse = { x: -1e4, y: -1e4 };
     let w = 0, h = 0, t = 0, parts = [], frame = 0, visible = true;
 
@@ -207,6 +213,7 @@
       ctx.globalCompositeOperation = "source-over";
       ctx.lineWidth = 1.1;
       for (const p of parts) {
+        ctx.globalAlpha = p.col[1];
         const a = angle(p.x, p.y);
         let vx = Math.cos(a) * p.s * 1.3;
         let vy = Math.sin(a) * p.s * 1.3;
@@ -215,7 +222,7 @@
           const d = Math.sqrt(d2) || 1, f = (1 - d2 / 18000) * 3.2;
           vx += (dx / d) * f; vy += (dy / d) * f;
         }
-        ctx.strokeStyle = p.col;
+        ctx.strokeStyle = p.col[0];
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         p.x += vx; p.y += vy;
@@ -223,6 +230,7 @@
         ctx.stroke();
         if (--p.life < 0 || p.x < 0 || p.x > w || p.y < 0 || p.y > h) Object.assign(p, spawn());
       }
+      ctx.globalAlpha = 1;
     }
 
     function loop() {
@@ -231,7 +239,9 @@
     }
     const start = () => { if (!frame && !reduce) frame = requestAnimationFrame(loop); };
 
+    readColors();
     resize();
+    addEventListener("palettechange", () => { readColors(); ctx.clearRect(0, 0, w, h); if (reduce) for (let i = 0; i < 90; i++) step(); });
     if (reduce) {
       for (let i = 0; i < 90; i++) step(); // one still frame of trails
       return;
