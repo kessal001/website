@@ -72,7 +72,7 @@
       if (!next) return;
       gsap.to(item.querySelector(".pcard"), {
         scale: 0.93,
-        filter: "brightness(0.6)",
+        filter: "brightness(0.9) saturate(0.85)",
         ease: "none",
         scrollTrigger: {
           trigger: next,
@@ -182,7 +182,7 @@
     const readColors = () => {
       const css = getComputedStyle(root);
       const v = (name) => css.getPropertyValue(name).trim();
-      colors = [[v("--ink"), 0.5], [v("--ink"), 0.28], [v("--accent"), 0.9], [v("--c3"), 0.85]];
+      colors = [[v("--ink"), 0.32], [v("--ink"), 0.16], [v("--accent"), 0.85], [v("--c2"), 0.7]];
       parts.forEach((p) => { p.col = pick(); });
     };
     const mouse = { x: -1e4, y: -1e4 };

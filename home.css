@@ -78,7 +78,7 @@
   inset: -20%;
   background:
     radial-gradient(38% 34% at 78% 32%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
-    radial-gradient(34% 40% at 14% 86%, color-mix(in srgb, var(--c3) 20%, transparent), transparent 70%);
+    radial-gradient(34% 40% at 14% 86%, color-mix(in srgb, var(--c6) 30%, transparent), transparent 70%);
   animation: drift 18s ease-in-out infinite alternate;
 }
 
@@ -358,7 +358,7 @@
   padding: clamp(1.5rem, 3.5vw, 3rem);
   border-radius: calc(var(--radius) * 1.4);
   background: var(--c);
-  box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -18px 50px rgba(17, 17, 17, 0.12);
   color: var(--cink, var(--card-ink));
   transform-origin: 50% 0;
 }
@@ -433,7 +433,7 @@
   aspect-ratio: 16 / 11;
   border-radius: var(--radius);
   background: #fff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 16px 32px rgba(17, 17, 17, 0.12);
 }
 
 .pcard__media img {
