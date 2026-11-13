@@ -5,8 +5,6 @@
   const finePointer = matchMedia("(pointer: fine)").matches;
   const reveal = () => root.classList.remove("js-anim");
 
-  initField();
-  initSpotlight();
   initProgressBar();
 
   const gsap = window.gsap;
@@ -72,9 +70,10 @@
     items.forEach((item, i) => {
       const next = items[i + 1];
       if (!next) return;
-      gsap.to(item.querySelector(".pcard"), {
+      // Explicit start values: animating a filter from "none" passes through black.
+      gsap.fromTo(item.querySelector(".pcard"), { scale: 1, filter: "brightness(1) saturate(1)" }, {
         scale: 0.93,
-        filter: "brightness(0.9) saturate(0.85)",
+        filter: "brightness(0.92) saturate(0.8)",
         ease: "none",
         scrollTrigger: {
           trigger: next,
@@ -163,102 +162,5 @@
     };
     addEventListener("scroll", update, { passive: true });
     update();
-  }
-
-  function initSpotlight() {
-    document.querySelectorAll(".fcard").forEach((card) => {
-      card.addEventListener("pointermove", (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        card.style.setProperty("--my", `${e.clientY - r.top}px`);
-      });
-    });
-  }
-
-  // Hero flow field: particles follow a slowly shifting vector field and avoid the cursor.
-  function initField() {
-    const canvas = document.querySelector(".hx__field");
-    const hero = document.querySelector(".hx");
-    if (!canvas || !hero || !canvas.getContext) return;
-    const ctx = canvas.getContext("2d");
-    let colors = [];
-    const readColors = () => {
-      const css = getComputedStyle(root);
-      const v = (name) => css.getPropertyValue(name).trim();
-      colors = [[v("--ink"), 0.32], [v("--ink"), 0.16], [v("--accent"), 0.85], [v("--c2"), 0.7]];
-      parts.forEach((p) => { p.col = pick(); });
-    };
-    const mouse = { x: -1e4, y: -1e4 };
-    let w = 0, h = 0, t = 0, parts = [], frame = 0, visible = true;
-
-    const pick = () => {
-      const r = Math.random();
-      return colors[r < 0.1 ? 2 : r < 0.22 ? 3 : r < 0.6 ? 0 : 1];
-    };
-    const spawn = () => ({ x: Math.random() * w, y: Math.random() * h, life: 120 + Math.random() * 320, col: pick(), s: 0.5 + Math.random() * 0.9 });
-    const angle = (x, y) => (Math.sin(x * 0.0021 + t * 0.00025) + Math.cos(y * 0.0026 - t * 0.0002) + Math.sin((x + y) * 0.0011)) * Math.PI * 0.75;
-
-    function resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const r = canvas.getBoundingClientRect();
-      w = r.width; h = r.height;
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      parts = Array.from({ length: Math.min(Math.round((w * h) / 6500), 340) }, spawn);
-    }
-
-    function step() {
-      t += 16;
-      ctx.globalCompositeOperation = "destination-out";
-      ctx.fillStyle = "rgba(0,0,0,0.07)";
-      ctx.fillRect(0, 0, w, h);
-      ctx.globalCompositeOperation = "source-over";
-      ctx.lineWidth = 1.1;
-      for (const p of parts) {
-        ctx.globalAlpha = p.col[1];
-        const a = angle(p.x, p.y);
-        let vx = Math.cos(a) * p.s * 1.3;
-        let vy = Math.sin(a) * p.s * 1.3;
-        const dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy;
-        if (d2 < 18000) {
-          const d = Math.sqrt(d2) || 1, f = (1 - d2 / 18000) * 3.2;
-          vx += (dx / d) * f; vy += (dy / d) * f;
-        }
-        ctx.strokeStyle = p.col[0];
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        p.x += vx; p.y += vy;
-        ctx.lineTo(p.x, p.y);
-        ctx.stroke();
-        if (--p.life < 0 || p.x < 0 || p.x > w || p.y < 0 || p.y > h) Object.assign(p, spawn());
-      }
-      ctx.globalAlpha = 1;
-    }
-
-    function loop() {
-      step();
-      frame = visible && !document.hidden ? requestAnimationFrame(loop) : 0;
-    }
-    const start = () => { if (!frame && !reduce) frame = requestAnimationFrame(loop); };
-
-    readColors();
-    resize();
-    addEventListener("palettechange", () => { readColors(); ctx.clearRect(0, 0, w, h); if (reduce) for (let i = 0; i < 90; i++) step(); });
-    if (reduce) {
-      for (let i = 0; i < 90; i++) step(); // one still frame of trails
-      return;
-    }
-    start();
-
-    let resizeTimer;
-    addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 150); });
-    hero.addEventListener("pointermove", (e) => {
-      const r = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
-    });
-    hero.addEventListener("pointerleave", () => { mouse.x = mouse.y = -1e4; });
-    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) start(); }).observe(hero);
-    document.addEventListener("visibilitychange", () => { if (!document.hidden) start(); });
   }
 })();

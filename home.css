@@ -64,14 +64,6 @@
   overflow: hidden;
 }
 
-.hx__field {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .hx__inner {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.9fr);
@@ -922,6 +914,263 @@
   outline-color: var(--accent-ink);
 }
 
+/* ---------- Chart-paper system on the homepage ---------- */
+
+.scroll-progress {
+  height: 4px;
+}
+
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 2px solid var(--ink);
+  background: var(--c3);
+}
+
+.hx__title em,
+.shead h2 em {
+  padding-inline: 0.08em;
+  background: linear-gradient(transparent 58%, var(--c3) 58% 92%, transparent 92%);
+}
+
+/* Marquee: a printed lime band */
+.marquee {
+  width: 104%;
+  margin: 1.5rem -2% 0;
+  border-block: 2px solid var(--ink);
+  background: var(--c3);
+  transform: rotate(-1.2deg);
+}
+
+.marquee i {
+  color: var(--ink);
+}
+
+/* Section head: an axis with ticks */
+.shead {
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--ink);
+  background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px var(--grid)) 0 100% / 100% 7px no-repeat;
+}
+
+.shead__label {
+  color: var(--ink);
+}
+
+.shead__label::before {
+  content: "";
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--c3);
+  vertical-align: -0.05em;
+}
+
+/* Stats */
+.stat {
+  position: relative;
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--c2);
+}
+
+.stat:nth-child(2) { box-shadow: 5px 5px 0 var(--accent); }
+.stat:nth-child(3) { box-shadow: 5px 5px 0 var(--c5); }
+.stat:nth-child(4) { box-shadow: 5px 5px 0 var(--c3); }
+
+.stat__num {
+  color: var(--ink);
+}
+
+.stat__glyph {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 3.4rem;
+  height: auto;
+  overflow: visible;
+}
+
+.stat__glyph .g-axis,
+.stat__glyph .g-line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.stat__glyph rect { stroke: var(--ink); stroke-width: 1.5; }
+.stat__glyph .g-a { fill: var(--ink); }
+.stat__glyph .g-b { fill: var(--accent); }
+.stat__glyph .g-c { fill: var(--c2); }
+.stat__glyph .g-dot { fill: var(--c3); stroke: var(--ink); stroke-width: 1.8; }
+.stat__glyph .g-dot.g-b { fill: var(--accent); }
+.stat__glyph .g-dot.g-c { fill: var(--c2); }
+.stat__glyph .g-trend { stroke: var(--c2); stroke-width: 2.6; }
+.stat__glyph .g-ring { fill: #ffffff; stroke: var(--ink); stroke-width: 2.6; }
+.stat__glyph .g-pupil { fill: var(--ink); }
+
+/* Project cards */
+.pcard {
+  border: 3px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.pcard::before,
+.pcard::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 17px;
+  height: 17px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--c3);
+}
+
+.pcard::before { left: 9%; }
+.pcard::after { right: 9%; }
+
+.pcard__media {
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.pcard__cta {
+  border: 2px solid var(--cink, var(--card-ink));
+}
+
+/* Timeline: data points on an axis */
+.timeline__rail {
+  width: 3px;
+  background: var(--line);
+}
+
+.timeline__fill {
+  box-shadow: none;
+}
+
+.tl::before {
+  left: calc(-1 * clamp(2rem, 5vw, 4rem) + 0.4rem - 6px);
+  width: 15px;
+  height: 15px;
+  border: 3px solid var(--ink);
+  background: var(--c3);
+}
+
+.tl {
+  border-bottom: 1px dashed var(--ink-soft);
+}
+
+/* Field cards */
+.fcard {
+  border: 2px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--c);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.fcard::before {
+  content: none;
+}
+
+.fcard:hover {
+  border-color: var(--ink);
+  box-shadow: 10px 10px 0 var(--c);
+  transform: translate(-2px, -2px);
+}
+
+.tags li {
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+}
+
+/* Approach */
+.approach {
+  border-top: 2px solid var(--ink);
+  background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px var(--grid)) 0 0 / 100% 7px no-repeat;
+}
+
+.approach__formula {
+  border: 2px solid var(--ink);
+  background: var(--c5);
+  box-shadow: var(--hard);
+}
+
+.approach__formula math,
+.approach__formula p {
+  color: var(--ink);
+}
+
+/* Finale */
+.finale {
+  border-top: 3px solid var(--ink);
+  border-radius: 0;
+}
+
+.finale__inner {
+  position: relative;
+}
+
+.finale__sticker {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(6.5rem, 12vw, 10rem);
+  height: auto;
+  overflow: visible;
+  transform: translateY(-50%) rotate(-8deg);
+}
+
+.finale__sticker circle {
+  fill: var(--c3);
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.finale__sticker text {
+  fill: var(--ink);
+  font: 500 11px var(--mono);
+  letter-spacing: 0.06em;
+}
+
+.finale__sticker-spin {
+  transform-origin: 60px 60px;
+  animation: av-spin 20s linear infinite;
+}
+
+.finale__sticker-arrow {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.finale .button {
+  border-color: var(--ink);
+}
+
+.finale .button--outline {
+  background: transparent;
+  border-color: var(--accent-ink);
+}
+
+.finale .button--outline:hover {
+  background: var(--c3);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.finale .button--dark:hover {
+  background: var(--c3);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 820px) {
@@ -999,8 +1248,13 @@
     gap: 0.4rem;
   }
 
-  .finale {
-    border-radius: var(--radius) var(--radius) 0 0;
+  .pcard::before { left: 1.5rem; }
+  .pcard::after { right: 1.5rem; }
+
+  .stat__glyph {
+    top: 0.9rem;
+    right: 0.9rem;
+    width: 2.4rem;
   }
 }
 
@@ -1008,6 +1262,7 @@
   .dot,
   .av__pie-spin,
   .av__sticker-spin,
+  .finale__sticker-spin,
   .hx__scroll-bar,
   .marquee__track {
     animation: none;

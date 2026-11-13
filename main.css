@@ -29,6 +29,9 @@
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
   --italic: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --radius: 1.25rem;
+  --grid: 40px;
+  --grid-line: color-mix(in srgb, var(--line) 60%, transparent);
+  --hard: 5px 5px 0 var(--ink);
   --shell: 76rem;
   --measure: 42rem;
 }
@@ -1438,8 +1441,8 @@ h3 em {
   }
 
   .project-card--wide .project-card__visual {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
+    border-right: 0 !important;
+    border-bottom: 2px solid var(--ink);
   }
 
   .project-card--wide .project-card__visual img {
@@ -1646,6 +1649,197 @@ h3 em {
   }
 }
 
+/* ---- Chart-paper system: ink outlines, hard shadows, axes, data points ---- */
+
+::selection {
+  background: var(--c3);
+  color: var(--ink);
+}
+
+body {
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / var(--grid) var(--grid),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / var(--grid) var(--grid),
+    var(--paper);
+}
+
+/* Logo: the gauge glasses */
+.site-mark {
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.site-mark__name::before {
+  content: none;
+}
+
+.logo {
+  flex: 0 0 auto;
+  width: 2.3rem;
+  height: 1.15rem;
+  overflow: visible;
+}
+
+.logo path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.logo circle {
+  fill: #ffffff;
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.logo .logo__p {
+  fill: var(--ink);
+  stroke: none;
+  transition: transform 200ms ease;
+}
+
+.site-mark:hover .logo__p {
+  transform: translateX(2.5px);
+}
+
+.site-header {
+  border-bottom: 2px solid var(--ink);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  box-shadow: 0 0 0 100vmax color-mix(in srgb, var(--paper) 94%, transparent);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Every section opens like a chart: an axis with ticks */
+.abstract,
+.overview,
+.featured-work,
+.selected,
+.page-intro,
+.cv-section,
+.teaching-section,
+.contact-section,
+.project-case,
+.site-footer {
+  border-top: 2px solid var(--ink);
+  background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px var(--grid)) 0 0 / 100% 7px no-repeat;
+}
+
+main > section:first-child {
+  border-top: 0;
+  background: none;
+}
+
+.record-list,
+.contact-list,
+.topic-list,
+.capability-list,
+.project-facts,
+.discipline-grid,
+.project-narrative section {
+  border-top-width: 2px;
+}
+
+.page-intro__aside {
+  border-left: 2px solid var(--ink);
+}
+
+/* Buttons: ink outline, hard shadow, physical press */
+.button {
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.button--primary,
+.button--primary:hover {
+  border-color: var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.button--ghost {
+  border-color: var(--ink);
+  background: var(--paper-deep);
+}
+
+.button--ghost:hover {
+  border-color: var(--ink);
+  background: var(--c3);
+  color: var(--ink);
+}
+
+/* Text links get a highlighter on hover */
+main p a:not(.button):hover,
+.site-footer a:hover,
+.download-list a:hover,
+.project-index a:hover {
+  background: var(--c3);
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+}
+
+/* Cards and media: outline + offset print */
+.project-card {
+  border: 2px solid var(--ink);
+  background: var(--paper-deep);
+  box-shadow: 6px 6px 0 var(--ink);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.project-card:hover {
+  border-color: var(--ink);
+  box-shadow: 9px 9px 0 var(--c2);
+  transform: translate(-2px, -2px);
+}
+
+.project-card__visual {
+  border-bottom: 2px solid var(--ink);
+}
+
+.project-card--wide .project-card__visual {
+  border-right: 2px solid var(--ink);
+}
+
+.project-visual img {
+  border: 2px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--c2);
+}
+
+.project-command {
+  border: 2px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--c3);
+}
+
+.formula {
+  border: 2px solid var(--ink);
+  background: var(--c5);
+  box-shadow: var(--hard);
+}
+
+.formula p,
+.formula__label {
+  color: var(--ink);
+}
+
+.section-index {
+  color: var(--ink);
+}
+
 /* ---- Mobile navigation (button + full-screen menu) ---- */
 
 .nav-toggle,
@@ -1679,9 +1873,10 @@ h3 em {
     min-height: 2.6rem;
     margin-left: auto;
     padding: 0.5rem 0.6rem 0.5rem 1rem;
-    border: 1px solid var(--line);
+    border: 2px solid var(--ink);
     border-radius: 999px;
     background: var(--paper-deep);
+    box-shadow: 3px 3px 0 var(--ink);
     color: var(--ink);
     font: 500 0.74rem/1 var(--mono);
     letter-spacing: 0.06em;
