@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"><link rel="stylesheet" href="main.css?v=2026111303">
-  <link rel="stylesheet" href="home.css?v=2026111303">
+  <link rel="stylesheet" href="home.css?v=2026111304">
   <script>
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.classList.add("js-anim");
@@ -27,7 +27,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <script src="home.js?v=2026111303" defer></script>
+  <script src="home.js?v=2026111304" defer></script>
+  <script src="portrait3d.js?v=2026111304" defer></script>
   <title>Luca Pedersoli — Business Intelligence &amp; Data Specialist, Milan</title>
   <script type="application/ld+json">
 {
@@ -119,14 +120,14 @@
       <canvas class="hx__field" aria-hidden="true"></canvas>
       <div class="hx__glow" aria-hidden="true"></div>
       <div class="site-shell hx__inner">
-        <p class="hx__kicker"><span class="dot" aria-hidden="true"></span>Business Intelligence · Data · Quantitative software — Milan</p>
-        <h1 id="hero-title" class="hx__title">
-          <span class="hx__name">Luca Pedersoli</span>
-          <span class="hx__line"><span>Turning complex</span></span>
-          <span class="hx__line"><span>data into <em>clear</em></span></span>
-          <span class="hx__line"><span>decisions.</span></span>
-        </h1>
-        <div class="hx__bottom">
+        <div class="hx__text">
+          <p class="hx__kicker"><span class="dot" aria-hidden="true"></span>Business Intelligence · Data · Quantitative software — Milan</p>
+          <h1 id="hero-title" class="hx__title">
+            <span class="hx__name">Luca Pedersoli</span>
+            <span class="hx__line"><span>Turning complex</span></span>
+            <span class="hx__line"><span>data into <em>clear</em></span></span>
+            <span class="hx__line"><span>decisions.</span></span>
+          </h1>
           <div class="hx__copy">
             <p class="hx__lead">BI, data analytics &amp; software development specialist at The First. MSc in Mathematical Engineering at Politecnico di Milano.</p>
             <div class="cta-row">
@@ -135,11 +136,12 @@
               <a class="cta-row__text" href="CV/CV_Luca_Pedersoli_Generale_EN.pdf">Download CV (PDF)</a>
             </div>
           </div>
-          <figure class="hx__portrait">
-            <img src="assets/images/portrait-400.webp" srcset="assets/images/portrait-400.webp 400w, assets/images/portrait-800.webp 800w" sizes="12rem" width="400" height="400" alt="Portrait of Luca Pedersoli" fetchpriority="high">
-            <figcaption><span class="dot" aria-hidden="true"></span>Now: BI &amp; software at The First</figcaption>
-          </figure>
         </div>
+        <figure class="hx__model" data-points="assets/images/portrait-points.bin">
+          <canvas class="hx__model-canvas" aria-hidden="true"></canvas>
+          <img class="hx__model-photo" src="assets/images/portrait-800.webp" srcset="assets/images/portrait-400.webp 400w, assets/images/portrait-800.webp 800w" sizes="(max-width: 820px) 70vw, 30vw" width="800" height="800" alt="Portrait of Luca Pedersoli" fetchpriority="high">
+          <figcaption><span class="dot" aria-hidden="true"></span>Now: BI &amp; software at The First</figcaption>
+        </figure>
       </div>
       <a class="hx__scroll" href="#glance"><span>Scroll</span><span class="hx__scroll-bar" aria-hidden="true"></span></a>
     </section>

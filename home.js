@@ -24,7 +24,7 @@
   // Hide scroll-revealed blocks with GSAP first, then let CSS stop hiding them.
   gsap.set(".reveal", { autoAlpha: 0, y: 40 });
   gsap.set(".hx__line > span", { yPercent: 110 });
-  gsap.set([".hx__kicker", ".hx__name", ".hx__copy > *", ".hx__portrait", ".hx__scroll"], { autoAlpha: 0, y: 24 });
+  gsap.set([".hx__kicker", ".hx__name", ".hx__copy > *", ".hx__model", ".hx__scroll"], { autoAlpha: 0, y: 24 });
   reveal();
 
   // Hero intro.
@@ -32,7 +32,7 @@
     .to(".hx__kicker", { autoAlpha: 1, y: 0, duration: 1 }, 0.1)
     .to(".hx__name", { autoAlpha: 1, y: 0, duration: 1 }, 0.2)
     .to(".hx__line > span", { yPercent: 0, duration: 1.4, stagger: 0.12 }, 0.25)
-    .to([".hx__copy > *", ".hx__portrait"], { autoAlpha: 1, y: 0, duration: 1.2, stagger: 0.1 }, 0.75)
+    .to([".hx__copy > *", ".hx__model"], { autoAlpha: 1, y: 0, duration: 1.2, stagger: 0.1 }, 0.75)
     .to(".hx__scroll", { autoAlpha: 1, y: 0, duration: 1 }, 1.2);
 
   // Hero drifts up and fades as you leave it.
@@ -94,7 +94,8 @@
 
   // Approach text lights up word by word.
   const text = document.querySelector("[data-words]");
-  if (text) {
+  const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+  if (text) fontsReady.then(() => {
     const words = window.SplitText ? new window.SplitText(text, { type: "words" }).words : splitWords(text);
     gsap.fromTo(words, { opacity: 0.15 }, {
       opacity: 1,
@@ -102,7 +103,7 @@
       ease: "none",
       scrollTrigger: { trigger: text, start: "top 80%", end: "bottom 45%", scrub: true },
     });
-  }
+  });
 
   gsap.from(".finale h2", {
     yPercent: 35,
