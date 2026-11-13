@@ -72,20 +72,6 @@
   height: 100%;
 }
 
-.hx__glow {
-  position: absolute;
-  z-index: -2;
-  inset: -20%;
-  background:
-    radial-gradient(38% 34% at 78% 32%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
-    radial-gradient(34% 40% at 14% 86%, color-mix(in srgb, var(--c6) 30%, transparent), transparent 70%);
-  animation: drift 18s ease-in-out infinite alternate;
-}
-
-@keyframes drift {
-  to { transform: translate3d(-4%, 3%, 0) scale(1.08); }
-}
-
 .hx__inner {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.9fr);
@@ -157,42 +143,241 @@
   margin: 0;
 }
 
-.hx__model-canvas {
-  display: none;
-  width: 100%;
-  height: min(72vh, 40rem);
-  cursor: crosshair;
-  touch-action: pan-y;
-}
+/* ---------- Avatar: self-portrait as a dashboard ---------- */
 
-.hx__model-photo {
-  width: min(100%, 26rem);
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-}
-
-.hx__model.is-3d .hx__model-canvas {
+.av__svg {
   display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(74vh, 41rem);
+  overflow: visible;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.hx__model.is-3d .hx__model-photo {
-  display: none;
+.av__grid path {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
 }
 
-.hx__model figcaption {
+.av__axis {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.av__pie circle { fill: var(--c5); }
+.av__pie-slice { fill: var(--c3); }
+
+.av__pie-spin {
+  transform-origin: 268px 172px;
+  animation: av-spin 48s linear infinite;
+}
+
+.av__misprint { fill: var(--c2); }
+
+.av__blazer,
+.av__lapel,
+.av__shirt,
+.av__collar,
+.av__neck,
+.av__skin {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.av__blazer { fill: var(--accent); }
+.av__lapel { fill: #1630d6; }
+.av__shirt { fill: #e9efff; }
+.av__collar { fill: #ffffff; }
+.av__neck { fill: #f0b08f; }
+.av__skin { fill: #ffd2b8; }
+.av__area-line { fill: none; }
+
+.av__points circle {
+  fill: var(--c3);
+  stroke: var(--ink);
+  stroke-width: 2.5;
+}
+
+.av__pocket circle {
+  fill: var(--paper-deep);
+  stroke: var(--ink);
+  stroke-width: 2.5;
+}
+
+.av__pocket path { fill: var(--c2); }
+.av__button { fill: var(--ink); }
+
+.av__stubble circle {
+  fill: var(--ink);
+  opacity: 0.45;
+}
+
+.av__nose {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.av__nose-dot {
+  fill: var(--c2);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.av__smile {
+  fill: none;
+  stroke: var(--c2);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.av__smile-pts circle {
+  fill: var(--paper-deep);
+  stroke: var(--ink);
+  stroke-width: 2.2;
+}
+
+.av__brows path {
+  stroke: var(--ink);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.av__brows {
+  transition: transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.av:hover .av__brows {
+  transform: translateY(-5px);
+}
+
+.av__frame-line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.av__lens-bg {
+  fill: #ffffff;
+  opacity: 0.92;
+}
+
+.av__gauge-track,
+.av__gauge {
+  fill: none;
+  stroke-width: 6;
+}
+
+.av__gauge-track { stroke: var(--line); }
+.av__gauge { stroke-linecap: round; }
+.av__gauge--a { stroke: var(--accent); }
+.av__gauge--b { stroke: var(--c2); }
+.av__pupil { fill: var(--ink); }
+
+.av__frame {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 6.5;
+}
+
+.av__hair rect { fill: var(--ink); }
+.av__hair .av__hair-hi { fill: var(--accent); }
+
+.av.is-refreshing .av__hair rect {
+  animation: av-flash 600ms ease-out;
+}
+
+.av__notes path {
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+}
+
+.av__notes text {
+  fill: var(--ink-soft);
+  font: 500 9.5px var(--mono);
+}
+
+.av__sticker circle { fill: var(--ink); }
+
+.av__sticker text {
+  fill: var(--c3);
+  font: 500 9.6px var(--mono);
+  letter-spacing: 0.06em;
+}
+
+.av__sticker .av__sigma {
+  font: italic 36px var(--italic);
+  letter-spacing: 0;
+}
+
+.av__sticker-spin {
+  transform-origin: 78px 440px;
+  animation: av-spin 18s linear infinite;
+}
+
+.av__caption {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.55rem;
-  margin-top: 0.5rem;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--paper) 80%, transparent);
+  justify-content: center;
+  gap: 0.6rem 1rem;
+  margin-top: 0.75rem;
+  color: var(--ink-soft);
   font-family: var(--mono);
-  font-size: 0.68rem;
-  white-space: nowrap;
+  font-size: 0.7rem;
+}
+
+.av__caption strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.av__refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--c3);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.av__refresh:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.av__refresh:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.av__refresh:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@keyframes av-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes av-flash {
+  0% { fill: var(--c2); }
+  100% { fill: var(--ink); }
 }
 
 .hx__scroll {
@@ -744,12 +929,9 @@
     grid-template-columns: 1fr;
   }
 
-  .hx__model-canvas {
-    height: min(100vw, 26rem);
-  }
-
-  .hx__model-photo {
-    width: min(70vw, 18rem);
+  .av__svg {
+    max-width: 26rem;
+    max-height: none;
   }
 
   .stats {
@@ -800,6 +982,10 @@
     display: none;
   }
 
+  .av__notes {
+    display: none;
+  }
+
   .stats {
     gap: 0.75rem;
   }
@@ -820,7 +1006,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .dot,
-  .hx__glow,
+  .av__pie-spin,
+  .av__sticker-spin,
   .hx__scroll-bar,
   .marquee__track {
     animation: none;

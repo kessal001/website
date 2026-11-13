@@ -36,11 +36,13 @@
     .to(".hx__scroll", { autoAlpha: 1, y: 0, duration: 1 }, 1.2);
 
   // Hero drifts up and fades as you leave it.
-  gsap.to(".hx__inner", {
-    yPercent: -14,
-    opacity: 0.15,
-    ease: "none",
-    scrollTrigger: { trigger: ".hx", start: "top top", end: "bottom top", scrub: true },
+  gsap.matchMedia().add("(min-width: 821px)", () => {
+    gsap.to(".hx__inner", {
+      yPercent: -14,
+      opacity: 0.15,
+      ease: "none",
+      scrollTrigger: { trigger: ".hx", start: "top top", end: "bottom top", scrub: true },
+    });
   });
 
   ScrollTrigger.batch(".reveal", {
