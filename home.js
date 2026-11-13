@@ -72,11 +72,11 @@
       if (!next) return;
       gsap.to(item.querySelector(".pcard"), {
         scale: 0.93,
-        filter: "brightness(0.55)",
+        filter: "brightness(0.6)",
         ease: "none",
         scrollTrigger: {
           trigger: next,
-          start: "top bottom",
+          start: "top 70%",
           end: () => `top ${parseFloat(getComputedStyle(next).top)}px`,
           scrub: true,
           invalidateOnRefresh: true,
