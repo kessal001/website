@@ -5,8 +5,7 @@
   <meta name="google-site-verification" content="nlcJfvqD6UtqCvkjObzPAK1iuus1svxKhA2I2Dyqnvs" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Luca Pedersoli works across business intelligence, data analytics, software development and teaching in Milan.">
-  <meta name="theme-color" content="#f3f0e8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#141615" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0b0c0f">
   <meta property="og:title" content="Luca Pedersoli — Business Intelligence &amp; Data Specialist, Milan">
   <meta property="og:description" content="Personal portfolio of Luca Pedersoli: mathematical engineering, business intelligence, software development and teaching.">
   <meta property="og:type" content="website">
@@ -16,7 +15,19 @@
   <link rel="icon" href="assets/images/favicon-64.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="main.css?v=20261113">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"><link rel="stylesheet" href="main.css?v=2026111302">
+  <link rel="stylesheet" href="home.css?v=2026111302">
+  <script>
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("js-anim");
+      setTimeout(function () { document.documentElement.classList.remove("js-anim"); }, 2500);
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="home.js?v=2026111302" defer></script>
   <title>Luca Pedersoli — Business Intelligence &amp; Data Specialist, Milan</title>
   <script type="application/ld+json">
 {
@@ -83,8 +94,9 @@
 </script>
 <!-- End generated SEO -->
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <header class="site-header site-shell">
     <a class="site-mark" href="./" aria-label="Luca Pedersoli, home">
@@ -102,206 +114,222 @@
     </nav>
   </header>
 
-  <main id="content" class="site-shell">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__copy">
-        <p class="eyebrow">Business Intelligence · Data · Quantitative software</p>
-        <h1 id="hero-title">Luca<br>Pedersoli</h1>
-        <p class="hero__lead">I turn complex data and operational questions into clear systems, useful software and measurable decisions.</p>
-        <p class="hero__note">Business Intelligence, Data Analytics &amp; Software Development Specialist at The First. MSc in Mathematical Engineering at Politecnico di Milano.</p>
-        <div class="cta-row">
-          <a class="button button--primary" href="contact.html">Get in touch <span aria-hidden="true">→</span></a>
-          <a class="button button--ghost" href="#work">View selected work</a>
-          <a class="cta-row__text" href="CV/CV_Luca_Pedersoli_Generale_EN.pdf">Download CV (PDF)</a>
+  <main id="content">
+    <section class="hx" aria-labelledby="hero-title">
+      <canvas class="hx__field" aria-hidden="true"></canvas>
+      <div class="hx__glow" aria-hidden="true"></div>
+      <div class="site-shell hx__inner">
+        <p class="hx__kicker"><span class="dot" aria-hidden="true"></span>Business Intelligence · Data · Quantitative software — Milan</p>
+        <h1 id="hero-title" class="hx__title">
+          <span class="hx__name">Luca Pedersoli</span>
+          <span class="hx__line"><span>Turning complex</span></span>
+          <span class="hx__line"><span>data into <em>clear</em></span></span>
+          <span class="hx__line"><span>decisions.</span></span>
+        </h1>
+        <div class="hx__bottom">
+          <div class="hx__copy">
+            <p class="hx__lead">BI, data analytics &amp; software development specialist at The First. MSc in Mathematical Engineering at Politecnico di Milano.</p>
+            <div class="cta-row">
+              <a class="button button--primary magnetic" href="contact.html">Get in touch <span aria-hidden="true">→</span></a>
+              <a class="button button--ghost magnetic" href="#work">Selected work</a>
+              <a class="cta-row__text" href="CV/CV_Luca_Pedersoli_Generale_EN.pdf">Download CV (PDF)</a>
+            </div>
+          </div>
+          <figure class="hx__portrait">
+            <img src="assets/images/portrait-400.webp" srcset="assets/images/portrait-400.webp 400w, assets/images/portrait-800.webp 800w" sizes="12rem" width="400" height="400" alt="Portrait of Luca Pedersoli" fetchpriority="high">
+            <figcaption><span class="dot" aria-hidden="true"></span>Now: BI &amp; software at The First</figcaption>
+          </figure>
         </div>
       </div>
-
-      <figure class="portrait">
-        <img src="assets/images/portrait-800.webp" srcset="assets/images/portrait-400.webp 400w, assets/images/portrait-800.webp 800w, assets/images/portrait-1200.webp 1200w" sizes="(max-width: 820px) min(28rem, calc(100vw - 2rem)), 31vw" width="800" height="800" alt="Portrait of Luca Pedersoli" fetchpriority="high">
-        <figcaption>Portrait, 2026</figcaption>
-      </figure>
+      <a class="hx__scroll" href="#glance"><span>Scroll</span><span class="hx__scroll-bar" aria-hidden="true"></span></a>
     </section>
 
-    <ul class="proof-strip" aria-label="At a glance">
-      <li><strong>2025—now</strong><span>Business Intelligence &amp; software at The First</span></li>
-      <li><strong>MSc</strong><span>Mathematical Engineering, Politecnico di Milano</span></li>
-      <li><strong>6</strong><span>Case studies across data, finance and software</span></li>
-      <li><strong>3 years</strong><span>Teaching high-school mathematics</span></li>
-    </ul>
-
-    <section class="featured-work" id="work" aria-labelledby="featured-title">
-      <div class="section-heading">
-        <div class="section-index" aria-hidden="true">01</div>
-        <div>
-          <p class="eyebrow">Selected work</p>
-          <h2 id="featured-title">Projects, research and contributions</h2>
-        </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Power BI</span><i>✳</i><span>Python</span><i>✳</i><span>PostgreSQL</span><i>✳</i><span>KPI design</span><i>✳</i><span>Data governance</span><i>✳</i><span>TypeScript</span><i>✳</i><span>DCF &amp; valuation</span><i>✳</i><span>Optimization</span><i>✳</i><span>Teaching</span><i>✳</i>
+        <span>Power BI</span><i>✳</i><span>Python</span><i>✳</i><span>PostgreSQL</span><i>✳</i><span>KPI design</span><i>✳</i><span>Data governance</span><i>✳</i><span>TypeScript</span><i>✳</i><span>DCF &amp; valuation</span><i>✳</i><span>Optimization</span><i>✳</i><span>Teaching</span><i>✳</i>
       </div>
+    </div>
 
-      <div class="project-grid project-grid--home">
-        <article class="project-card project-card--wide">
-          <a class="project-card__visual" href="project-portfolio-optimizer.html" aria-label="Read the Portfolio Optimizer case study">
-            <img src="assets/projects/portfolio-optimizer-analysis.png" width="2080" height="800" loading="lazy" alt="Efficient frontier and walk-forward backtest generated by Portfolio Optimizer">
-          </a>
-          <div class="project-card__body">
-            <p class="eyebrow">Portfolio analytics · Python</p>
-            <h3><a href="project-portfolio-optimizer.html">Portfolio Optimizer</a></h3>
-            <p>A configurable desktop and command-line application for market data, risk analysis, constrained optimization and walk-forward validation.</p>
-            <a class="project-card__link" href="project-portfolio-optimizer.html">Read case study <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-        <article class="project-card project-card--document">
-          <a class="project-card__visual" href="project-bending-spoons-equity-research.html" aria-label="Read the Bending Spoons Equity Research case study">
-            <img src="assets/projects/bending-spoons-one-page-thesis.png" width="918" height="1188" loading="lazy" alt="Preview of the Bending Spoons one-page investment thesis">
-          </a>
-          <div class="project-card__body">
-            <p class="eyebrow">Equity research · Valuation</p>
-            <h3><a href="project-bending-spoons-equity-research.html">Bending Spoons</a></h3>
-            <p>Independent initiating coverage combining a forecast model, DCF, trading comparables and a decision-ready investment thesis.</p>
-            <a class="project-card__link" href="project-bending-spoons-equity-research.html">Read case study <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-        <article class="project-card project-card--diagram">
-          <a class="project-card__visual" href="project-parquet-info.html" aria-label="Read the parquet_info case study">
-            <img src="assets/projects/parquet-info-overview.svg" width="1200" height="700" loading="lazy" alt="parquet_info terminal overview">
-          </a>
-          <div class="project-card__body">
-            <p class="eyebrow">Data tooling · Python</p>
-            <h3><a href="project-parquet-info.html">parquet_info</a></h3>
-            <p>A focused CLI that turns an unfamiliar Parquet file into an inspectable, searchable dataset.</p>
-            <a class="project-card__link" href="project-parquet-info.html">Read case study <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-        <article class="project-card">
-          <a class="project-card__visual" href="project-epidemic-lab.html" aria-label="Read the Epidemic Lab case study">
-            <img src="assets/projects/epidemic-lab.png" width="1905" height="848" loading="lazy" alt="Epidemic Lab SIR simulator interface">
-          </a>
-          <div class="project-card__body">
-            <p class="eyebrow">Modelling · Blazor</p>
-            <h3><a href="project-epidemic-lab.html">Epidemic Lab</a></h3>
-            <p>An interactive SIR simulator that makes differential equations tangible in the browser.</p>
-            <a class="project-card__link" href="project-epidemic-lab.html">Read case study <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-        <article class="project-card">
-          <a class="project-card__visual" href="project-myshelfie.html" aria-label="Read the MyShelfie case study">
-            <img src="assets/projects/myshelfie-game-flow.png" width="3310" height="2210" loading="lazy" alt="MyShelfie game-flow UML diagram">
-          </a>
-          <div class="project-card__body">
-            <p class="eyebrow">Distributed systems · Java</p>
-            <h3><a href="project-myshelfie.html">MyShelfie</a></h3>
-            <p>A multiplayer board game engineered by a four-person team across networks, interfaces and recovery.</p>
-            <a class="project-card__link" href="project-myshelfie.html">Read case study <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-        <article class="project-card project-card--wide">
-          <a class="project-card__visual" href="project-frog-and-toad.html" aria-label="Read about the Italian translation of Frog and Toad">
-            <img src="assets/projects/frog-and-toad-social-card.jpg" width="1200" height="654" loading="lazy" alt="Frog and Toad with small machines, illustrated by HungerArtist">
-          </a>
-          <div class="project-card__body">
-            <p class="eyebrow">Translation · AI communication</p>
-            <h3><a href="project-frog-and-toad.html">Frog and Toad, in Italian</a></h3>
-            <p>Italian translation of Elizabeth Van Nostrand’s illustrated story about increasingly capable AI systems, published on the author’s website with translator credit.</p>
-            <a class="project-card__link" href="https://frogandtoad.ai/it" target="_blank" rel="noopener noreferrer">Read the Italian edition <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-      </div>
-      <p class="section-outro section-outro--flush"><a href="projects.html">View the complete project index</a></p>
+    <section class="stats site-shell" id="glance" aria-label="At a glance">
+      <div class="stat reveal"><p class="stat__num"><span data-count="1">1</span></p><p class="stat__label">Company-wide BI platform, from legacy AS400 data to executive Power BI dashboards</p></div>
+      <div class="stat reveal"><p class="stat__num"><span data-count="6">6</span></p><p class="stat__label">Case studies across data tooling, finance, modelling and software</p></div>
+      <div class="stat reveal"><p class="stat__num"><span data-count="2">2</span></p><p class="stat__label">Degrees from Politecnico di Milano: Computer and Mathematical Engineering</p></div>
+      <div class="stat reveal"><p class="stat__num"><span data-count="3">3</span><small>yrs</small></p><p class="stat__label">Teaching high-school mathematics at Istituto Zaccaria</p></div>
     </section>
 
-    <section class="selected" aria-labelledby="selected-title">
-      <div class="section-heading">
-        <div class="section-index" aria-hidden="true">02</div>
-        <div>
-          <p class="eyebrow">Selected trajectory</p>
-          <h2 id="selected-title">Work, study and teaching</h2>
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="site-shell">
+        <div class="shead reveal">
+          <p class="shead__label">01 — Selected work</p>
+          <h2 id="work-title">Projects, research and <em>contributions</em></h2>
+          <a class="shead__link" href="projects.html">Complete project index <span aria-hidden="true">→</span></a>
         </div>
+        <ol class="stack">
+          <li class="stack__item" style="--c: var(--c-lime); --i: 0">
+            <article class="pcard">
+              <div class="pcard__text">
+                <p class="pcard__meta"><span>01</span>Portfolio analytics · Python</p>
+                <h3><a href="project-portfolio-optimizer.html">Portfolio Optimizer</a></h3>
+                <p>A configurable desktop and command-line application for market data, risk analysis, constrained optimization and walk-forward validation.</p>
+                <span class="pcard__cta" aria-hidden="true">Read case study →</span>
+              </div>
+              <div class="pcard__media pcard__media--contain"><img src="assets/projects/portfolio-optimizer-analysis.png" width="2080" height="800" loading="lazy" alt="Efficient frontier and walk-forward backtest generated by Portfolio Optimizer"></div>
+            </article>
+          </li>
+          <li class="stack__item" style="--c: var(--c-coral); --i: 1">
+            <article class="pcard">
+              <div class="pcard__text">
+                <p class="pcard__meta"><span>02</span>Equity research · Valuation</p>
+                <h3><a href="project-bending-spoons-equity-research.html">Bending Spoons</a></h3>
+                <p>Independent initiating coverage combining a forecast model, DCF, trading comparables and a decision-ready investment thesis.</p>
+                <span class="pcard__cta" aria-hidden="true">Read case study →</span>
+              </div>
+              <div class="pcard__media pcard__media--top"><img src="assets/projects/bending-spoons-one-page-thesis.png" width="918" height="1188" loading="lazy" alt="Preview of the Bending Spoons one-page investment thesis"></div>
+            </article>
+          </li>
+          <li class="stack__item" style="--c: var(--c-blue); --i: 2">
+            <article class="pcard">
+              <div class="pcard__text">
+                <p class="pcard__meta"><span>03</span>Data tooling · Python</p>
+                <h3><a href="project-parquet-info.html">parquet_info</a></h3>
+                <p>A focused CLI that turns an unfamiliar Parquet file into an inspectable, searchable dataset.</p>
+                <span class="pcard__cta" aria-hidden="true">Read case study →</span>
+              </div>
+              <div class="pcard__media pcard__media--contain"><img src="assets/projects/parquet-info-overview.svg" width="1200" height="700" loading="lazy" alt="parquet_info terminal overview"></div>
+            </article>
+          </li>
+          <li class="stack__item" style="--c: var(--c-mint); --i: 3">
+            <article class="pcard">
+              <div class="pcard__text">
+                <p class="pcard__meta"><span>04</span>Modelling · Blazor</p>
+                <h3><a href="project-epidemic-lab.html">Epidemic Lab</a></h3>
+                <p>An interactive SIR simulator that makes differential equations tangible in the browser.</p>
+                <span class="pcard__cta" aria-hidden="true">Read case study →</span>
+              </div>
+              <div class="pcard__media"><img src="assets/projects/epidemic-lab.png" width="1905" height="848" loading="lazy" alt="Epidemic Lab SIR simulator interface"></div>
+            </article>
+          </li>
+          <li class="stack__item" style="--c: var(--c-lilac); --i: 4">
+            <article class="pcard">
+              <div class="pcard__text">
+                <p class="pcard__meta"><span>05</span>Distributed systems · Java</p>
+                <h3><a href="project-myshelfie.html">MyShelfie</a></h3>
+                <p>A multiplayer board game engineered by a four-person team across networks, interfaces and recovery.</p>
+                <span class="pcard__cta" aria-hidden="true">Read case study →</span>
+              </div>
+              <div class="pcard__media pcard__media--contain"><img src="assets/projects/myshelfie-game-flow.png" width="3310" height="2210" loading="lazy" alt="MyShelfie game-flow UML diagram"></div>
+            </article>
+          </li>
+          <li class="stack__item" style="--c: var(--c-amber); --i: 5">
+            <article class="pcard">
+              <div class="pcard__text">
+                <p class="pcard__meta"><span>06</span>Translation · AI communication</p>
+                <h3><a href="project-frog-and-toad.html">Frog and Toad, in Italian</a></h3>
+                <p>Italian translation of Elizabeth Van Nostrand’s illustrated story about increasingly capable AI systems, published on the author’s website with translator credit.</p>
+                <span class="pcard__cta" aria-hidden="true">Read about the translation →</span>
+              </div>
+              <div class="pcard__media"><img src="assets/projects/frog-and-toad-social-card.jpg" width="1200" height="654" loading="lazy" alt="Frog and Toad with small machines, illustrated by HungerArtist"></div>
+            </article>
+          </li>
+        </ol>
       </div>
+    </section>
 
-      <div class="record-list">
-        <article class="record">
-          <p class="record__date"><time datetime="2025-06">2025</time>—present</p>
+    <section class="path site-shell" aria-labelledby="path-title">
+      <div class="shead reveal">
+        <p class="shead__label">02 — Trajectory</p>
+        <h2 id="path-title">Work, study and <em>teaching</em></h2>
+        <a class="shead__link" href="cv.html">Full curriculum <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="timeline">
+      <span class="timeline__rail" aria-hidden="true"><span class="timeline__fill"></span></span>
+      <ol class="timeline__list">
+        <li class="tl reveal">
+          <p class="tl__date"><time datetime="2025-06">2025</time> — now</p>
           <div>
             <h3>The First Spa</h3>
-            <p class="record__role">Business Intelligence, Data Analytics &amp; Software Development Specialist</p>
+            <p class="tl__role">Business Intelligence, Data Analytics &amp; Software Development Specialist</p>
             <p>Company-wide reporting, data integration and automation, from legacy AS400 sources to executive Power BI dashboards.</p>
           </div>
-        </article>
-        <article class="record">
-          <p class="record__date"><time datetime="2024-03">2024</time>—2026</p>
+        </li>
+        <li class="tl reveal">
+          <p class="tl__date"><time datetime="2020-09">2020</time> — 2026</p>
           <div>
             <h3>Politecnico di Milano</h3>
-            <p class="record__role">MSc in Mathematical Engineering</p>
-            <p>Advanced quantitative study following a BSc in Computer Engineering.</p>
+            <p class="tl__role">BSc Computer Engineering → MSc Mathematical Engineering</p>
+            <p>Software engineering and distributed systems first, then advanced quantitative study.</p>
           </div>
-        </article>
-        <article class="record">
-          <p class="record__date"><time datetime="2022-09">2022</time>—2025</p>
+        </li>
+        <li class="tl reveal">
+          <p class="tl__date"><time datetime="2023-09">2023</time> — 2025</p>
+          <div>
+            <h3>Freelance</h3>
+            <p class="tl__role">Web developer · Next.js &amp; modern web technologies</p>
+            <p>Frontend and full-stack applications for businesses and professionals with Next.js, TypeScript, PostgreSQL and GraphQL.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <p class="tl__date"><time datetime="2022-09">2022</time> — 2025</p>
           <div>
             <h3>Istituto Zaccaria</h3>
-            <p class="record__role">Mathematics teacher</p>
+            <p class="tl__role">Mathematics teacher</p>
             <p>High-school mathematics teaching, tailored lesson planning and technology-supported instruction.</p>
           </div>
-        </article>
+        </li>
+      </ol>
       </div>
-
-      <p class="section-outro"><a href="cv.html">Complete curriculum and downloadable CVs</a></p>
     </section>
 
-    <section class="overview" aria-labelledby="overview-title">
-      <div class="section-heading">
-        <div class="section-index" aria-hidden="true">03</div>
-        <div>
-          <p class="eyebrow">Current practice</p>
-          <h2 id="overview-title">Three connected fields</h2>
-        </div>
+    <section class="fields site-shell" aria-labelledby="fields-title">
+      <div class="shead reveal">
+        <p class="shead__label">03 — Practice</p>
+        <h2 id="fields-title">Three connected <em>fields</em></h2>
       </div>
-
-      <div class="discipline-grid">
-        <article>
-          <p class="discipline-grid__number">I</p>
+      <div class="fields__grid">
+        <article class="fcard reveal" style="--c: var(--c-lime)">
+          <p class="fcard__num">I</p>
           <h3>Data &amp; decisions</h3>
           <p>Business Intelligence, KPI frameworks, Power BI, data governance and reporting systems built around real operational needs.</p>
+          <ul class="tags"><li>Power BI</li><li>KPI</li><li>Governance</li></ul>
         </article>
-        <article>
-          <p class="discipline-grid__number">II</p>
+        <article class="fcard reveal" style="--c: var(--c-blue)">
+          <p class="fcard__num">II</p>
           <h3>Software &amp; automation</h3>
           <p>Python, PostgreSQL, TypeScript and modern web technologies used to make processes clearer, faster and less fragile.</p>
+          <ul class="tags"><li>Python</li><li>PostgreSQL</li><li>TypeScript</li></ul>
         </article>
-        <article>
-          <p class="discipline-grid__number">III</p>
+        <article class="fcard reveal" style="--c: var(--c-coral)">
+          <p class="fcard__num">III</p>
           <h3>Teaching</h3>
-          <p>Mathematics teaching and lesson design, with an archive of notes and exercises kept available for students and colleagues. <a href="teaching.html" hreflang="it">Teaching archive</a> <span class="lang-note">· in Italian</span></p>
+          <p>Mathematics teaching and lesson design, with an archive of notes and exercises kept available for students and colleagues.</p>
+          <p class="fcard__link"><a href="teaching.html" hreflang="it">Teaching archive <span aria-hidden="true">→</span></a> <span class="lang-note">in Italian</span></p>
         </article>
       </div>
     </section>
 
-    <section class="abstract" aria-labelledby="abstract-title">
-      <div class="section-index" aria-hidden="true">04</div>
-      <div>
-        <p class="eyebrow">Approach</p>
-        <h2 id="abstract-title">Between analytical rigour and practical work.</h2>
-        <p>I work at the intersection of business intelligence, data governance and software development. My background in computer and mathematical engineering helps me move from a loosely defined problem to a structure that people can understand, maintain and use.</p>
-        <p>Teaching remains part of that practice: explaining mathematics clearly is another way of designing reliable systems of thought.</p>
-      </div>
-      <aside class="formula" aria-label="Basel problem identity">
-        <span class="formula__label">A recurring reference</span>
+    <section class="approach site-shell" aria-labelledby="approach-title">
+      <p class="shead__label reveal">04 — Approach</p>
+      <h2 id="approach-title" class="visually-hidden">Approach</h2>
+      <p class="approach__text" data-words>I work where business intelligence, data governance and software meet, moving from a loosely defined problem to a structure that people can understand, maintain and use.</p>
+      <aside class="approach__formula reveal" aria-label="Basel problem identity">
         <math display="block" aria-label="The sum from n equals one to infinity of one over n squared equals pi squared over six">
           <mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></munderover><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>=</mo><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>6</mn></mfrac></mrow>
         </math>
-        <p>Simple terms, unexpected structure.</p>
+        <p>Simple terms, unexpected structure. Teaching is part of the same practice: explaining mathematics clearly is another way of designing reliable systems of thought.</p>
       </aside>
     </section>
 
-    <section class="closing-cta" aria-labelledby="closing-title">
-      <div>
-        <p class="eyebrow">Next step</p>
-        <h2 id="closing-title">Have a data problem worth structuring?</h2>
-        <p>I am happy to talk about business intelligence, analytics and software work, or to go deeper into any of the projects above. Email is the quickest way to reach me.</p>
-      </div>
-      <div class="cta-row">
-        <a class="button button--primary" href="mailto:luca.pedersoli@mail.polimi.it?subject=Hello%20Luca">Write an email</a>
-        <a class="button button--ghost" href="https://www.linkedin.com/in/luca-pedersoli" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+    <section class="finale" aria-labelledby="finale-title">
+      <div class="site-shell finale__inner">
+        <p class="shead__label">05 — Next step</p>
+        <h2 id="finale-title">Let’s <em>talk</em>.</h2>
+        <p class="finale__lead">Business intelligence, analytics and software work, or a deeper look at any of the projects above. Email is the quickest way to reach me.</p>
+        <div class="cta-row">
+          <a class="button button--dark magnetic" href="mailto:luca.pedersoli@mail.polimi.it?subject=Hello%20Luca">Write an email <span aria-hidden="true">→</span></a>
+          <a class="button button--outline magnetic" href="https://www.linkedin.com/in/luca-pedersoli" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="button button--outline magnetic" href="https://github.com/kessal001" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
   </main>
